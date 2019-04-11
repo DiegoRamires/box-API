@@ -1,4 +1,9 @@
 const express = require('express')
+const mongoose = require('mongoose')
+
+mongoose.connect("mongodb://localhost/omnistack", {
+  useNewUrlParser: true
+})
 
 const app = express()
 
