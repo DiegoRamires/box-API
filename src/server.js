@@ -19,7 +19,7 @@ mongoose.connect("mongodb://localhost/omnistack", {
   useNewUrlParser: true
 })
 
-app.use((req, res) => {
+app.use((req, res, next) => {
   req.io = io
 
   return next()
@@ -31,5 +31,5 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')))
 
 app.use(require('./routes'))
 
-server.listen(3000)
+server.listen(process.env.PORT || 3000)
 console.log('App runing on port 3000')
