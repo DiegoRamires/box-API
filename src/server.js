@@ -15,7 +15,7 @@ io.on("connection", socket => {
   })
 })
 
-mongoose.connect("mongodb://localhost/omnistack", {
+mongoose.connect("mongodb+srv://heroku:heroku@cluster0-ahjnp.mongodb.net/heroku?retryWrites=true", {
   useNewUrlParser: true
 })
 
@@ -31,5 +31,5 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')))
 
 app.use(require('./routes'))
 
-server.listen(process.env.PORT || 3000)
-console.log('App runing on port 3000')
+server.listen(process.env.PORT || 3001)
+console.log('App runing on port 3001')
